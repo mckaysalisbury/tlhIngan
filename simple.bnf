@@ -1,0 +1,5 @@
+# Is it grammatical to say {qaDev 'ej Qapla'.}? I'm denoting that it is.
+<klingon_sentence> ::= <object_clause> " " <verb_word> " " <subject>
+<object_clause> ::= "object"
+<verb_word> ::= "verb"
+<subject> ::= "subject"
