@@ -1,4 +1,5 @@
-<klingon-sentence> ::= <complex-sentence> | <simple-sentence> | <exclamation> # Is it grammatical to say {qaDev 'ej Qapla'.}? I'm denoting that it is.
+# Is it grammatical to say {qaDev 'ej Qapla'.}? I'm denoting that it is.
+<klingon-sentence> ::= <complex-sentence> | <simple-sentence> | <exclamation> 
 <complex-sentence> ::= <compound-sentence> | <subordinate-clause-sentence> | <sentence-as-object-sentence>
 <compound-sentence> ::= <simple-sentence> " " <conjunction> " " <klingon-sentence>
 <simple-sentence> ::= <regular-sentence> | <copula-sentence> | <comparison-sentence>
@@ -28,7 +29,8 @@
 <verb-6> ::= <verb-6-suffix><rovable-rovers> | ""
 <verb-7> ::= <verb-7-suffix><rovable-rovers> | ""
 <verb-8> ::= <verb-8-suffix><rovable-rovers> | ""
-<verb-9> ::= <verb-9-suffix-regular><rovable-rovers> | "" # note that some type-9 verb suffixes can't fit in this position as a regular sentence. They have separate entries
+# note that some type-9 verb suffixes can't fit in this position as a regular sentence. They have separate entries.
+<verb-9> ::= <verb-9-suffix-regular><rovable-rovers> | "" 
 <verb-1-suffix> ::= "'egh" | "chuq"
 <verb-2-suffix> ::= "nIS" | "qang" | "vIp" | "beH" | "rup"
 <verb-3-suffix> ::= "choH" | "qa'"
@@ -37,19 +39,23 @@
 <verb-6-suffix> ::= "chu'" | "bej" | "law'" | "ba'"
 <verb-7-suffix> ::= "taH" | "lI'"
 <verb-8-suffix> ::= "neS"
-<verb-9-suffix> ::= "wI'" | "bogh" | "'a'" | "chugh" | "DI'" | "pa'" | "vIS" | "meH" | "mo'" | "jaj'" | "ghach" # most of these have their own grammatical rules that should be observed, so this entry isn't used in the BNL.
+# most of these have their own grammatical rules that should be observed, so this entry isn't used in the BNL.
+<verb-9-suffix> ::= "wI'" | "bogh" | "'a'" | "chugh" | "DI'" | "pa'" | "vIS" | "meH" | "mo'" | "jaj'" | "ghach" 
 <verb-9-suffix-regular> "'a'" | "jaj"
 
 #rovers
-<before-1> ::= <roving-rovers> | "Ha'" # rovable rovers because those could apply to the verb directly.
+# rovable rovers because those could apply to the verb directly.
+<before-1> ::= <roving-rovers> | "Ha'" 
 <before-9> ::= "Qo'" | ""
 
-<rovers> ::= "qu'" | "be'" | "Qo'" | "Ha'" # These are the list of all rovers (but this isn't really being used in the BNL)
-<roving-rovers> ::= "qu'" | "be'" | "" # Not all rovers really do rove. These do.
+# These are the list of all rovers (but this isn't really being used in the BNL)
+<rovers> ::= "qu'" | "be'" | "Qo'" | "Ha'" 
+# Not all rovers really do rove. These do.
+<roving-rovers> ::= "qu'" | "be'" | "" 
 
 
 
-#noun suffixes
+# noun suffixes
 <noun-1><noun-2><noun-3><noun-4><noun-5>
 
 
@@ -73,7 +79,8 @@
 <copula-topics> ::= <copula-topic> | <copula-topic> " " <copula-topics>
 <copula-topic> ::= <noun-phrase>"'e'"
 
-<verb-as-noun> ::= <verb><before-1><verb-1><verb-2><verb-3><verb-4><verb-5><verb-6><verb-7><verb-8><before-9><verb-as-noun-type-9-suffix> # Prefix not allowed? Some of these suffixes might not be valid, but at least {-moH} is.
+# Prefix not allowed? Some of these suffixes might not be valid, but at least {-moH} is.
+<verb-as-noun> ::= <verb><before-1><verb-1><verb-2><verb-3><verb-4><verb-5><verb-6><verb-7><verb-8><before-9><verb-as-noun-type-9-suffix> 
 <verb-as-noun-type-9-suffix> ::= "wI'" | "ghach"
 
 <pronoun> ::= "jIH" | "SoH" | "ghaH" | "'oH" | "maH" | "tlhIH" | "chaH" | "bIH"
@@ -81,26 +88,36 @@
 <consonant> ::= "b" | "ch" | "D" | "gh" | "H" | "j" | "l" | "m" | "n" | "p" | "q" | "Q" | "r" | "S" | "t" | "tlh" | "v" | "w" | "y" | "'"
 
 # Not finished. Still in progress
-<comparison-sentence> # law' puS
+<comparison-sentence> := "law' .. puS"
 
-<adverb-clause> ::= <adverb> | <noun-as-adverb>
-<noun-as-adverb> # Daq, all type 5? If it follows a verb acting as adjective, verb can only have a {-qu'}
+<adverb-clause> ::= "Adverb Clause"
+# <adverb-clause> ::= <adverb> | <noun-as-adverb> | <time-element>
+# Daq, all type 5? If it follows a verb acting as adjective, verb can only have a {-qu'}
+# <noun-as-adverb> 
 
-<be-verbs-as-adjectives> # "be" meaning verbs which express state / quality
+# "be" meaning verbs which express state / quality
+# <be-verbs-as-adjectives> 
 
-<subordinate-clause-sentence> # a sentence preceeded or followed by a subordinate clause sentence, preferably with a comma
-<subordinate-clause-type-9-suffix> ::= "chugh" | "DI'" | "pa'" | "mo'" | "vIS" | "meH" # {-vIS} always has a {-taH}. {-meH} must preceed, can also be used for modifying nouns. Which might place it with <verb-as-noun> but preceeding?
+<subordinate-clause-sentence> ::= "subordinate clause sentence"
+# a sentence preceeded or followed by a subordinate clause sentence, preferably with a comma
+#<subordinate-clause-sentence> 
+# {-vIS} always has a {-taH}. {-meH} must preceed, can also be used for modifying nouns. Which might place it with <verb-as-noun> but preceeding?
+#<subordinate-clause-type-9-suffix> ::= "chugh" | "DI'" | "pa'" | "mo'" | "vIS" | "meH" 
 
-<sentence-as-object-sentence> # 'e' | net
+# 'e' | net
+<sentence-as-object-sentence> ::= "sentence as object"
 
-<relative-clause> # sentence with a bogh verb, perhaps with an {-'e'}
+ # sentence with a bogh verb, perhaps with an {-'e'}
+<relative-clause> ::= "relative clause"
 <relative-clause-type-9-suffix> ::= "bogh"
 
 # Unfinished, but they're really just words
-<conjunction> ::= <klingon-root-word> # okay, maybe this one isn't so long
+# okay, well enumerating conjunctions wouldn't be so bad.
+<conjunction> ::= <klingon-root-word> 
 <exclamation> ::= <klingon-root-word>
 <noun> ::= <klinogn-root-word>
-<verb> ::= <klingon-root-word> # But I think I will separate out this verb to different verb types (e.g. stative / quality, and maybe transitivity) for grammatical reasons 
+# But I think I will separate out this verb to different verb types (e.g. stative / quality, and maybe transitivity) for grammatical reasons 
+<verb> ::= <klingon-root-word>
 <adverb> ::= <klingon-root-word>
 
 # helper definitions for undefined word list
