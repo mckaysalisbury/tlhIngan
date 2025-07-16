@@ -7,7 +7,7 @@
 <optional_adverbs> ::= <adverbs> | ""
 <adverbs> ::= <adverbs> <adverb_clause> " " | <adverb_clause> " "
 
-<regular_sentence> ::= <optional_adverbs> <optional_object_clause> <verb_word> <optional_subject clause>
+<regular_sentence> ::= <optional_adverbs> <optional_object_clause> <verb_word> <optional_subject_clause>
 # this bnl expression dosen't cover linguistic agreement
 
 <optional_object_clause> ::= " " <noun_clause> | ""
@@ -41,7 +41,7 @@
 <verb_8_suffix> ::= "neS"
 # most of these have their own grammatical rules that should be observed, so this entry isn't used in the BNL.
 <verb_9_suffix> ::= "wI'" | "bogh" | "'a'" | "chugh" | "DI'" | "pa'" | "vIS" | "meH" | "mo'" | "jaj'" | "ghach" 
-<verb_9_suffix_regular> "'a'" | "jaj"
+<verb_9_suffix_regular> ::= "'a'" | "jaj"
 
 #rovers
 # rovable rovers because those could apply to the verb directly.
@@ -88,7 +88,7 @@
 <consonant> ::= "b" | "ch" | "D" | "gh" | "H" | "j" | "l" | "m" | "n" | "p" | "q" | "Q" | "r" | "S" | "t" | "tlh" | "v" | "w" | "y" | "'"
 
 # Not finished. Still in progress
-<comparison_sentence> := "law' .. puS"
+<comparison_sentence> ::= "law' .. puS"
 
 <adverb_clause> ::= "Adverb Clause"
 # <adverb_clause> ::= <adverb> | <noun_as_adverb> | <time_element>
@@ -115,7 +115,7 @@
 # okay, well enumerating conjunctions wouldn't be so bad.
 <conjunction> ::= <klingon_root_word> 
 <exclamation> ::= <klingon_root_word>
-<noun> ::= <klinogn_root_word>
+<noun> ::= <klingon_root_word>
 # But I think I will separate out this verb to different verb types (e.g. stative / quality, and maybe transitivity) for grammatical reasons 
 <verb> ::= <klingon_root_word>
 <adverb> ::= <klingon_root_word>
