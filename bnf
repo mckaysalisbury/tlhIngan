@@ -121,6 +121,9 @@
 <relative_clause> ::= "relative clause"
 <relative_clause_type_9_suffix> ::= "bogh"
 
+# infix expletive {jay'}
+# post {-'e'} adverbs
+
 # Unfinished, but they're really just words
 # okay, well enumerating conjunctions wouldn't be so bad.
 <conjunction> ::= <klingon_root_word> 
