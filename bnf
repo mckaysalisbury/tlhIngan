@@ -1,17 +1,17 @@
 # Is it grammatical to say {qaDev 'ej Qapla'.}? I'm denoting that it is.
-<klingon_sentence> ::= <complex_sentence> | <simple_sentence> | <exclamation> 
+<klingon_sentence> ::= <complex_sentence> | <simple_sentence> | <exclamation>
 <complex_sentence> ::= <compound_sentence> | <subordinate_clause_sentence> | <sentence_as_object_sentence>
 <compound_sentence> ::= <simple_sentence> " " <conjunction> " " <klingon_sentence>
 <simple_sentence> ::= <regular_sentence> | <copula_sentence> | <comparison_sentence>
 
-<optional_adverbs> ::= <adverbs> | ""
+<optional_adverbs> ::= <adverbs> |
 <adverbs> ::= <adverbs> <adverb_clause> " " | <adverb_clause> " "
 
 <regular_sentence> ::= <optional_adverbs> <optional_object_clause> <verb_word> <optional_subject_clause>
 # this bnl expression dosen't cover linguistic agreement
 
-<optional_object_clause> ::= " " <noun_clause> | ""
-<optional_subject_clause> ::= <noun_clause> " " | ""
+<optional_object_clause> ::= " " <noun_clause> |
+<optional_subject_clause> ::= <noun_clause> " " |
 <noun_clause> ::= <noun_clause> " " <noun_clause> | <noun_word> | <noun_clause> " " <be_verb_as_adjective> | <verb_as_noun> | <relative_clause>
 
 <noun_word> ::= <noun> <noun_suffixes> | <pronoun>
@@ -21,16 +21,16 @@
 <noun_suffixes> ::= <noun_1> <noun_2> <noun_3> <noun_4> <noun_5>
 
 # verb suffixes
-<verb_1> ::= <verb_1_suffix> <rovable_rovers> | ""
-<verb_2> ::= <verb_2_suffix> <rovable_rovers> | ""
-<verb_3> ::= <verb_3_suffix> <rovable_rovers> | ""
-<verb_4> ::= <verb_4_suffix> <rovable_rovers> | ""
-<verb_5> ::= <verb_5_suffix> <rovable_rovers> | ""
-<verb_6> ::= <verb_6_suffix> <rovable_rovers> | ""
-<verb_7> ::= <verb_7_suffix> <rovable_rovers> | ""
-<verb_8> ::= <verb_8_suffix> <rovable_rovers> | ""
+<verb_1> ::= <verb_1_suffix> <rovable_rovers> |
+<verb_2> ::= <verb_2_suffix> <rovable_rovers> |
+<verb_3> ::= <verb_3_suffix> <rovable_rovers> |
+<verb_4> ::= <verb_4_suffix> <rovable_rovers> |
+<verb_5> ::= <verb_5_suffix> <rovable_rovers> |
+<verb_6> ::= <verb_6_suffix> <rovable_rovers> |
+<verb_7> ::= <verb_7_suffix> <rovable_rovers> |
+<verb_8> ::= <verb_8_suffix> <rovable_rovers> |
 # note that some type_9 verb suffixes can't fit in this position as a regular sentence. They have separate entries.
-<verb_9> ::= <verb_9_suffix_regular> <rovable_rovers> | "" 
+<verb_9> ::= <verb_9_suffix_regular> <rovable_rovers> |
 <verb_1_suffix> ::= "'egh" | "chuq"
 <verb_2_suffix> ::= "nIS" | "qang" | "vIp" | "beH" | "rup"
 <verb_3_suffix> ::= "choH" | "qa'"
@@ -45,25 +45,25 @@
 
 #rovers
 # rovable rovers because those could apply to the verb directly.
-<before_1> ::= <rovable_rovers> | "Ha'" 
-<before_9> ::= "Qo'" | ""
+<before_1> ::= <rovable_rovers> | "Ha'"
+<before_9> ::= "Qo'" |
 
 # These are the list of all rovers (but this isn't really being used in the BNL)
-<rovers> ::= "qu'" | "be'" | "Qo'" | "Ha'" 
+<rovers> ::= "qu'" | "be'" | "Qo'" | "Ha'"
 # Not all rovers really do rove. These do.
-<rovable_rovers> ::= "qu'" | "be'" | "" 
+<rovable_rovers> ::= "qu'" | "be'" |
 
 # noun suffixes
-<noun_1> ::= <noun_1_suffix> | ""
-<noun_2> ::= <noun_2_suffix> | ""
-<noun_3> ::= <noun_3_suffix> | ""
-<noun_4> ::= <noun_4_suffix> | ""
-<noun_5> ::= <noun_5_suffix_regular> | ""
+<noun_1> ::= <noun_1_suffix> |
+<noun_2> ::= <noun_2_suffix> |
+<noun_3> ::= <noun_3_suffix> |
+<noun_4> ::= <noun_4_suffix> |
+<noun_5> ::= <noun_5_suffix_regular> |
 
-<noun_1_suffix> ::= "'a'" | "Hom" | "oy" | ""
-<noun_2_suffix> ::= "pu'" | "Du'" | "mey" | ""
-<noun_3_suffix> ::= "qoq" | "Hey" | "na'" | ""
-<noun_4_suffix> ::= "wI'" | "wIj" | "ma'" | "maj" | "lI'" | "lIj" | "Daj" | "chaj" | "vam" | "vetlh" | ""
+<noun_1_suffix> ::= "'a'" | "Hom" | "oy" |
+<noun_2_suffix> ::= "pu'" | "Du'" | "mey" |
+<noun_3_suffix> ::= "qoq" | "Hey" | "na'" |
+<noun_4_suffix> ::= "wI'" | "wIj" | "ma'" | "maj" | "lI'" | "lIj" | "Daj" | "chaj" | "vam" | "vetlh" |
 # most of these have their own grammatical rules that should be observed, so this entry isn't used in the BNL.
 <noun_5_suffix> ::= "Daq" | "vo'" | "mo'" | "vaD" | "'e'"
 <noun_5_suffix_regular> ::= "'e'"
@@ -74,20 +74,20 @@
 <declarative_prefix> ::= <no_object_declarative_prefix> | <object_declarative_prefix>
 <imperative_prefix> ::= <no_object_imperative_prefix> | <object_imperative_prefix>
 
-<no_object_declarative_prefix> ::= "jI" | "bI" | "" | "ma" | "Su"
-<object_declarative_prefix> ::= "qa" | "vI" | "Sa" | "cho" | "ju" | "Da" | "mu" | "Du" | "nu" | "lI" | "" | "pI" | "wI" | "re" | "DI" | "tu" | "bo" | "che" | "mu" | "Du" | "nu" | "lI" | "nI" | "nu"
+<no_object_declarative_prefix> ::= "jI" | "bI" | | "ma" | "Su"
+<object_declarative_prefix> ::= "qa" | "vI" | "Sa" | "cho" | "ju" | "Da" | "mu" | "Du" | "nu" | "lI" | | "pI" | "wI" | "re" | "DI" | "tu" | "bo" | "che" | "mu" | "Du" | "nu" | "lI" | "nI" | "nu"
 <no_object_imperative_prefix> ::= "yI" | "pe"
 <object_imperative_prefix> ::= "HI" | "yI" | "gho" | "tI"
 # some of the prefixes intentionally appear here multiple times, as they are correctly ambiguous cases, but that really only matters for linguistic agreement.
 
 <copula_sentence> ::= <subject_complement> " " <pronoun> <verb_suffixes> <optional_copula_topic>
 <subject_complement> ::= <adverbs> | <noun_clause> | <adverbs> <noun_clause>
-<optional_copula_topic> ::= " " <copula_topic> | " " <copula_topics> " " "je"| ""
+<optional_copula_topic> ::= " " <copula_topic> | " " <copula_topics> " " "je" |
 <copula_topics> ::= <copula_topic> | <copula_topic> " " <copula_topics>
 <copula_topic> ::= <noun_clause> "'e'"
 
 # Prefix not allowed? Some of these suffixes might not be valid, but at least {-moH} is.
-<verb_as_noun> ::= <verb> <before_1> <verb_1> <verb_2> <verb_3> <verb_4> <verb_5> <verb_6> <verb_7> <verb_8> <before_9> <verb_as_noun_type_9_suffix> 
+<verb_as_noun> ::= <verb> <before_1> <verb_1> <verb_2> <verb_3> <verb_4> <verb_5> <verb_6> <verb_7> <verb_8> <before_9> <verb_as_noun_type_9_suffix>
 <verb_as_noun_type_9_suffix> ::= "wI'" | "ghach"
 
 <pronoun> ::= "jIH" | "SoH" | "ghaH" | "'oH" | "maH" | "tlhIH" | "chaH" | "bIH"
