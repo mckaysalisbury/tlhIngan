@@ -92,7 +92,7 @@
 
 <pronoun> ::= "jIH" | "SoH" | "ghaH" | "'oH" | "maH" | "tlhIH" | "chaH" | "bIH"
 <vowel> ::= "a" | "e" | "I" | "o" | "u"
-<consonant> ::= "b" | "ch" | "D" | "gh" | "H" | "j" | "l" | "m" | "n" | "p" | "q" | "Q" | "r" | "S" | "t" | "tlh" | "v" | "w" | "y" | "'"
+<consonant> ::= "b" | "ch" | "D" | "gh" | "H" | "j" | "l" | "m" | "n" | "ng" | "p" | "q" | "Q" | "r" | "S" | "t" | "tlh" | "v" | "w" | "y" | "'"
 
 
 
