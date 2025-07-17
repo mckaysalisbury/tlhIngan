@@ -10,8 +10,8 @@
 <regular_sentence> ::= <optional_adverbs> <optional_object_clause> <verb_word> <optional_subject_clause>
 # this bnl expression dosen't cover linguistic agreement
 
-<optional_object_clause> ::= " " <noun_clause> |
-<optional_subject_clause> ::= <noun_clause> " " |
+<optional_object_clause> ::= <noun_clause> " " |
+<optional_subject_clause> ::= " " <noun_clause> |
 <noun_clause> ::= <noun_clause> " " <noun_clause> | <noun_word> | <noun_clause> " " <be_verb_as_adjective> | <verb_as_noun> | <relative_clause>
 
 <noun_word> ::= <noun> <noun_suffixes> | <pronoun>
