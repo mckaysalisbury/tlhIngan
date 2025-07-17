@@ -37,7 +37,7 @@
 <verb_4_suffix> ::= "moH"
 <verb_5_suffix> ::= "laH" | "lu'"
 <verb_6_suffix> ::= "chu'" | "bej" | "law'" | "ba'"
-<verb_7_suffix> ::= "taH" | "lI'"
+<verb_7_suffix> ::= "taH" | "lI'" | "pu'" | "ta'"
 <verb_8_suffix> ::= "neS"
 # most of these have their own grammatical rules that should be observed, so this entry isn't used in the BNL.
 <verb_9_suffix> ::= "wI'" | "bogh" | "'a'" | "chugh" | "DI'" | "pa'" | "vIS" | "meH" | "mo'" | "jaj'" | "ghach" 
