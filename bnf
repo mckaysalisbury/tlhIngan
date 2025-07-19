@@ -1,7 +1,7 @@
 # Is it grammatical to say {qaDev 'ej Qapla'.}? I'm denoting that it is.
-<klingon_sentence> ::= <complex_sentence> | <simple_sentence> | <exclamation>
+<klingon_sentence> ::= <complex_sentence> | <simple_sentence> | <EXCLAMATION>
 <complex_sentence> ::= <compound_sentence> | <subordinate_clause_sentence> | <sentence_as_object_sentence>
-<compound_sentence> ::= <simple_sentence> " " <conjunction> " " <klingon_sentence>
+<compound_sentence> ::= <simple_sentence> " " <CONJUNCTION> " " <klingon_sentence>
 <simple_sentence> ::= <regular_sentence> | <copula_sentence> | <comparison_sentence>
 
 <optional_adverbs> ::= <adverbs> |
@@ -14,8 +14,8 @@
 <optional_subject_clause> ::= " " <noun_clause> |
 <noun_clause> ::= <noun_clause> " " <noun_clause> | <noun_word> | <noun_clause> " " <be_verb_as_adjective> | <verb_as_noun> | <relative_clause>
 
-<noun_word> ::= <noun> <noun_suffixes> | <pronoun>
-<verb_word> ::= <verb_prefix> <verb> <verb_suffixes>
+<noun_word> ::= <NOUN> <noun_suffixes> | <pronoun>
+<verb_word> ::= <verb_prefix> <VERB> <verb_suffixes>
 
 <verb_suffixes> ::= <before_1> <verb_1> <verb_2> <verb_3> <verb_4> <verb_5> <verb_6> <verb_7> <verb_8> <before_9> <verb_9>
 <noun_suffixes> ::= <noun_1> <noun_2> <noun_3> <noun_4> <noun_5>
@@ -87,7 +87,7 @@
 <copula_topic> ::= <noun_clause> "'e'"
 
 # Prefix not allowed? Some of these suffixes might not be valid, but at least {-moH} is.
-<verb_as_noun> ::= <verb> <before_1> <verb_1> <verb_2> <verb_3> <verb_4> <verb_5> <verb_6> <verb_7> <verb_8> <before_9> <verb_as_noun_type_9_suffix>
+<verb_as_noun> ::= <VERB> <before_1> <verb_1> <verb_2> <verb_3> <verb_4> <verb_5> <verb_6> <verb_7> <verb_8> <before_9> <verb_as_noun_type_9_suffix>
 <verb_as_noun_type_9_suffix> ::= "wI'" | "ghach"
 
 <pronoun> ::= "jIH" | "SoH" | "ghaH" | "'oH" | "maH" | "tlhIH" | "chaH" | "bIH"
@@ -122,16 +122,15 @@
 # post {-'e'} adverbs
 
 
-
-# These will be pulled from the dictionary at start time.
-#<conjunction> ::= <klingon_root_word> 
-#<exclamation> ::= <klingon_root_word>
-#<noun> ::= <klingon_root_word>
+# These will be pulled from the dictionary when loaded into the (lark) parser.
+#<CONJUNCTION> ::= <klingon_root_word>
+#<EXCLAMATION> ::= <klingon_root_word>
+#<ADVERB> ::= <klingon_root_word>
+#<NOUN> ::= <klingon_root_word>
 # "be" meaning verbs which express state / quality
 #<be_verb_as_adjective> ::= <klingon_root_word>
 # But I think I will separate out this verb to different verb types (e.g. stative / quality, and maybe transitivity) for grammatical reasons 
-#<verb> ::= <klingon_root_word>
-#<adverb> ::= <klingon_root_word>
+#<VERB> ::= <klingon_root_word>
 
 # Which means these won't be used. (but they don't hurt anything, and they're effectively validated by the `letterparser` branch of the parser repo (rebase involved FWIW)
 # helper definitions for undefined word list
