@@ -71,13 +71,13 @@
 <verb_prefix> ::= <declarative_prefix> | <imperative_prefix>
 # This bnl expression doesn't consider the unspecified object cases grammatically, but they're the same prefixes, so it's effectively just a linguistic agreement case, which is stated as uncovered elsewhere.
 
-<declarative_prefix> ::= <no_object_declarative_prefix> | <object_declarative_prefix>
-<imperative_prefix> ::= <no_object_imperative_prefix> | <object_imperative_prefix>
+<declarative_prefix> ::= <NO_OBJECT_DECLARATIVE_PREFIX> | <OBJECT_DECLARATIVE_PREFIX> |
+<imperative_prefix> ::= <NO_OBJECT_IMPERATIVE_PREFIX> | <OBJECT_IMPERATIVE_PREFIX>
 
-<no_object_declarative_prefix> ::= "jI" | "bI" | | "ma" | "Su"
-<object_declarative_prefix> ::= "qa" | "vI" | "Sa" | "cho" | "ju" | "Da" | "mu" | "Du" | "nu" | "lI" | | "pI" | "wI" | "re" | "DI" | "tu" | "bo" | "che" | "mu" | "Du" | "nu" | "lI" | "nI" | "nu"
-<no_object_imperative_prefix> ::= "yI" | "pe"
-<object_imperative_prefix> ::= "HI" | "yI" | "gho" | "tI"
+<NO_OBJECT_DECLARATIVE_PREFIX> ::= "jI" | "bI" | "ma" | "Su"
+<OBJECT_DECLARATIVE_PREFIX> ::= "qa" | "vI" | "Sa" | "cho" | "ju" | "Da" | "mu" | "Du" | "nu" | "lI" | "pI" | "wI" | "re" | "DI" | "tu" | "bo" | "che" | "mu" | "Du" | "nu" | "lI" | "nI" | "nu"
+<NO_OBJECT_IMPERATIVE_PREFIX> ::= "yI" | "pe"
+<OBJECT_IMPERATIVE_PREFIX> ::= "HI" | "yI" | "gho" | "tI"
 # some of the prefixes intentionally appear here multiple times, as they are correctly ambiguous cases, but that really only matters for linguistic agreement.
 
 <copula_sentence> ::= <subject_complement> " " <pronoun> <verb_suffixes> <optional_copula_topic>
