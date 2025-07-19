@@ -17,7 +17,7 @@
 <noun_clause> ::= <noun_clause> " " <noun_clause> | <noun_word> | <noun_clause> " " <be_verb_as_adjective> | <verb_as_noun> | <relative_clause>
 
 <noun_word> ::= <NOUN> <noun_suffixes> | <PRONOUN>
-<optional_object_verb_word> ::= <object_prefix> <optional_object_verb> <verb_suffixes>
+<optional_object_verb_word> ::= <optional_object_prefix> <optional_object_verb> <verb_suffixes>
 <no_object_verb_word> ::= <no_object_prefix> <no_object_verb> <verb_suffixes>
 <verb> ::= <POSSIBLY_TRANSITIVE_VERB> | <INTRANSITIVE_ONLY_VERB> | <BE_VERB>
 <optional_object_verb> ::= <POSSIBLY_TRANSITIVE_VERB>
@@ -77,7 +77,7 @@
 
 # This bnl expression doesn't consider the unspecified object cases grammatically, but they're the same prefixes, so it's effectively just a linguistic agreement case, which is stated as uncovered elsewhere.
 
-<object_prefix> ::= <OBJECT_DECLARATIVE_PREFIX> | <OBJECT_IMPERATIVE_PREFIX> |
+<optional_object_prefix> ::= <OBJECT_DECLARATIVE_PREFIX> | <OBJECT_IMPERATIVE_PREFIX> | <NO_OBJECT_DECLARATIVE_PREFIX> | <NO_OBJECT_IMPERATIVE_PREFIX> |
 <no_object_prefix> ::= <NO_OBJECT_DECLARATIVE_PREFIX> | <NO_OBJECT_IMPERATIVE_PREFIX> |
 <NO_OBJECT_DECLARATIVE_PREFIX> ::= "jI" | "bI" | "ma" | "Su"
 <OBJECT_DECLARATIVE_PREFIX> ::= "qa" | "vI" | "Sa" | "cho" | "ju" | "Da" | "mu" | "Du" | "nu" | "lI" | "pI" | "wI" | "re" | "DI" | "tu" | "bo" | "che" | "mu" | "Du" | "nu" | "lI" | "nI" | "nu"
