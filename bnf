@@ -7,15 +7,21 @@
 <optional_adverbs> ::= <adverbs> |
 <adverbs> ::= <adverbs> <adverb_clause> " " | <adverb_clause> " "
 
-<regular_sentence> ::= <optional_adverbs> <optional_object_clause> <verb_word> <optional_subject_clause>
-# this bnl expression dosen't cover linguistic agreement
+<regular_sentence> ::= <regular_object_sentence> | <regular_no_object_sentence>
+<regular_object_sentence> ::=<optional_adverbs> <optional_object_clause> <transitive_verb_word> <optional_subject_clause>
+<regular_no_object_sentence> ::= <optional_adverbs> <intransitive_verb_word> <optional_subject_clause>
+# this bnl expression dosen't cover most linguistic agreement
 
 <optional_object_clause> ::= <noun_clause> " " |
 <optional_subject_clause> ::= " " <noun_clause> |
 <noun_clause> ::= <noun_clause> " " <noun_clause> | <noun_word> | <noun_clause> " " <be_verb_as_adjective> | <verb_as_noun> | <relative_clause>
 
 <noun_word> ::= <NOUN> <noun_suffixes> | <pronoun>
-<verb_word> ::= <verb_prefix> <VERB> <verb_suffixes>
+<transitive_verb_word> ::= <verb_prefix> <transitive_verb> <verb_suffixes>
+<intransitive_verb_word> ::= <verb_prefix> <intransitive_verb> <verb_suffixes>
+<transitive_verb> ::= <TRANSITIVE_VERB> | <INTRANSITIVE_ONLY_VERB> | <BE_VERB>
+<intransitive_verb> ::= <INTRANSITIVE_VERB> | <BE_VERB>
+<be_verb_as_adjective> ::= <BE_VERB>
 
 <verb_suffixes> ::= <before_1> <verb_1> <verb_2> <verb_3> <verb_4> <verb_5> <verb_6> <verb_7> <verb_8> <before_9> <verb_9>
 <noun_suffixes> ::= <noun_1> <noun_2> <noun_3> <noun_4> <noun_5>
@@ -68,19 +74,17 @@
 <noun_5_suffix> ::= "Daq" | "vo'" | "mo'" | "vaD" | "'e'"
 <noun_5_suffix_regular> ::= "'e'"
 
-<verb_prefix> ::= <declarative_prefix> | <imperative_prefix>
 # This bnl expression doesn't consider the unspecified object cases grammatically, but they're the same prefixes, so it's effectively just a linguistic agreement case, which is stated as uncovered elsewhere.
 
-<declarative_prefix> ::= <NO_OBJECT_DECLARATIVE_PREFIX> | <OBJECT_DECLARATIVE_PREFIX> |
-<imperative_prefix> ::= <NO_OBJECT_IMPERATIVE_PREFIX> | <OBJECT_IMPERATIVE_PREFIX>
-
+<object_prefix> ::= <OBJECT_DECLARATIVE_PREFIX> | <OBJECT_IMPERATIVE_PREFIX>
+<no_object_prefix> ::= <NO_OBJECT_DECLARATIVE_PREFIX> | <NO_OBJECT_IMPERATIVE_PREFIX>
 <NO_OBJECT_DECLARATIVE_PREFIX> ::= "jI" | "bI" | "ma" | "Su"
 <OBJECT_DECLARATIVE_PREFIX> ::= "qa" | "vI" | "Sa" | "cho" | "ju" | "Da" | "mu" | "Du" | "nu" | "lI" | "pI" | "wI" | "re" | "DI" | "tu" | "bo" | "che" | "mu" | "Du" | "nu" | "lI" | "nI" | "nu"
 <NO_OBJECT_IMPERATIVE_PREFIX> ::= "yI" | "pe"
 <OBJECT_IMPERATIVE_PREFIX> ::= "HI" | "yI" | "gho" | "tI"
 # some of the prefixes intentionally appear here multiple times, as they are correctly ambiguous cases, but that really only matters for linguistic agreement.
 
-<copula_sentence> ::= <subject_complement> " " <pronoun> <verb_suffixes> <optional_copula_topic>
+<copula_sentence> ::= <subject_complement> " " <PRONOUN> <verb_suffixes> <optional_copula_topic>
 <subject_complement> ::= <adverbs> | <noun_clause> | <adverbs> <noun_clause>
 <optional_copula_topic> ::= " " <copula_topic> | " " <copula_topics> " " "je" |
 <copula_topics> ::= <copula_topic> | <copula_topic> " " <copula_topics>
@@ -89,11 +93,6 @@
 # Prefix not allowed? Some of these suffixes might not be valid, but at least {-moH} is.
 <verb_as_noun> ::= <VERB> <before_1> <verb_1> <verb_2> <verb_3> <verb_4> <verb_5> <verb_6> <verb_7> <verb_8> <before_9> <verb_as_noun_type_9_suffix>
 <verb_as_noun_type_9_suffix> ::= "wI'" | "ghach"
-
-<pronoun> ::= "jIH" | "SoH" | "ghaH" | "'oH" | "maH" | "tlhIH" | "chaH" | "bIH"
-<vowel> ::= "a" | "e" | "I" | "o" | "u"
-<consonant> ::= "b" | "ch" | "D" | "gh" | "H" | "j" | "l" | "m" | "n" | "ng" | "p" | "q" | "Q" | "r" | "S" | "t" | "tlh" | "v" | "w" | "y" | "'"
-
 
 
 
@@ -131,8 +130,13 @@
 #<be_verb_as_adjective> ::= <klingon_root_word>
 # But I think I will separate out this verb to different verb types (e.g. stative / quality, and maybe transitivity) for grammatical reasons 
 #<VERB> ::= <klingon_root_word>
+#<PRONOUN> ::= "jIH" | "SoH" | "ghaH" | "'oH" | "maH" | "tlhIH" | "chaH" | "bIH"
+
+
 
 # Which means these won't be used. (but they don't hurt anything, and they're effectively validated by the `letterparser` branch of the parser repo (rebase involved FWIW)
 # helper definitions for undefined word list
 <klingon_root_word> ::= <klingon_root_word_piece> | <klingon_root_word_piece> <klingon_root_word>
 <klingon_root_word_piece> ::= <consonant> <vowel> | <consonant> <vowel> <consonant> | <consonant> <vowel>"w" "'" | <consonant> <vowel>"y" "'" | <consonant> <vowel>"r" "gh"
+<vowel> ::= "a" | "e" | "I" | "o" | "u"
+<consonant> ::= "b" | "ch" | "D" | "gh" | "H" | "j" | "l" | "m" | "n" | "ng" | "p" | "q" | "Q" | "r" | "S" | "t" | "tlh" | "v" | "w" | "y" | "'"
