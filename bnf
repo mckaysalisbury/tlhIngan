@@ -29,52 +29,57 @@
 <noun_suffixes> ::= <noun_1> <noun_2> <noun_3> <noun_4> <noun_5>
 
 # verb suffixes
-<verb_1> ::= <verb_1_suffix> <rovable_rovers> |
-<verb_2> ::= <verb_2_suffix> <rovable_rovers> |
-<verb_3> ::= <verb_3_suffix> <rovable_rovers> |
-<verb_4> ::= <verb_4_suffix> <rovable_rovers> |
-<verb_5> ::= <verb_5_suffix> <rovable_rovers> |
-<verb_6> ::= <verb_6_suffix> <rovable_rovers> |
-<verb_7> ::= <verb_7_suffix> <rovable_rovers> |
-<verb_8> ::= <verb_8_suffix> <rovable_rovers> |
+<verb_1> ::= <VERB_1_SUFFIX> | <VERB_1_SUFFIX> <ROVABLE_ROVER> |
+<verb_2> ::= <VERB_2_SUFFIX> | <VERB_2_SUFFIX> <ROVABLE_ROVER> |
+<verb_3> ::= <VERB_3_SUFFIX> | <VERB_3_SUFFIX> <ROVABLE_ROVER> |
+<verb_4> ::= <VERB_4_SUFFIX> | <VERB_4_SUFFIX> <ROVABLE_ROVER> |
+<verb_5> ::= <VERB_5_SUFFIX> | <VERB_5_SUFFIX> <ROVABLE_ROVER> |
+<verb_6> ::= <VERB_6_SUFFIX> | <VERB_6_SUFFIX> <ROVABLE_ROVER> |
+<verb_7> ::= <VERB_7_SUFFIX> | <VERB_7_SUFFIX> <ROVABLE_ROVER> |
+<verb_8> ::= <VERB_8_SUFFIX> | <VERB_8_SUFFIX> <ROVABLE_ROVER> |
 # note that some type_9 verb suffixes can't fit in this position as a regular sentence. They have separate entries.
-<verb_9> ::= <verb_9_suffix_regular> <rovable_rovers> |
-<verb_1_suffix> ::= "'egh" | "chuq"
-<verb_2_suffix> ::= "nIS" | "qang" | "vIp" | "beH" | "rup"
-<verb_3_suffix> ::= "choH" | "qa'"
-<verb_4_suffix> ::= "moH"
-<verb_5_suffix> ::= "laH" | "lu'"
-<verb_6_suffix> ::= "chu'" | "bej" | "law'" | "ba'"
-<verb_7_suffix> ::= "taH" | "lI'" | "pu'" | "ta'"
-<verb_8_suffix> ::= "neS"
+<verb_9> ::= <VERB_9_SUFFIX_REGULAR> | <VERB_9_SUFFIX> <ROVABLE_ROVER> |
+<VERB_1_SUFFIX> ::= "'egh" | "chuq"
+<VERB_2_SUFFIX> ::= "nIS" | "qang" | "vIp" | "beH" | "rup"
+<VERB_3_SUFFIX> ::= "choH" | "qa'"
+<VERB_4_SUFFIX> ::= "moH"
+<VERB_5_SUFFIX> ::= "laH" | "lu'"
+<VERB_6_SUFFIX> ::= "chu'" | "bej" | "law'" | "ba'"
+<VERB_7_SUFFIX> ::= "taH" | "lI'" | "pu'" | "ta'"
+<VERB_8_SUFFIX> ::= "neS"
 # most of these have their own grammatical rules that should be observed, so this entry isn't used in the BNL.
-<verb_9_suffix> ::= "wI'" | "bogh" | "'a'" | "chugh" | "DI'" | "pa'" | "vIS" | "meH" | "mo'" | "jaj'" | "ghach" 
-<verb_9_suffix_regular> ::= "'a'" | "jaj"
+<VERB_9_SUFFIX> ::= "wI'" | "bogh" | "'a'" | "chugh" | "DI'" | "pa'" | "vIS" | "meH" | "mo'" | "jaj'" | "ghach" 
+<VERB_9_SUFFIX_REGULAR> ::= "'a'" | "jaj"
 
 #rovers
 # rovable rovers because those could apply to the verb directly.
-<before_1> ::= <rovable_rovers> | "Ha'"
-<before_9> ::= "Qo'" |
+# TODO: (grammar) Are multiple before 1 rovers allowed? I.e. Is it permitted to say something like {muSHa'be'qu''egh}
+<before_1> ::= <ROVABLE_ROVER> | <BEFORE_1_ROVER> |
+<before_9> ::= <BEFORE_9_ROVER> |
 
 # These are the list of all rovers (but this isn't really being used in the BNL)
-<rovers> ::= "qu'" | "be'" | "Qo'" | "Ha'"
+<ROVER> ::= "qu'" | "be'" | "Qo'" | "Ha'"
 # Not all rovers really do rove. These do.
-<rovable_rovers> ::= "qu'" | "be'" |
+<ROVABLE_ROVER> ::= "qu'" | "be'"
+# Some have a specific position
+<BEFORE_1_ROVER> ::= "Ha'"
+<BEFORE_9_ROVER> ::= "Qo'"
 
 # noun suffixes
-<noun_1> ::= <noun_1_suffix> |
-<noun_2> ::= <noun_2_suffix> |
-<noun_3> ::= <noun_3_suffix> |
-<noun_4> ::= <noun_4_suffix> |
-<noun_5> ::= <noun_5_suffix_regular> |
+<noun_1> ::= <NOUN_1_SUFFIX> |
+<noun_2> ::= <NOUN_2_SUFFIX> |
+<noun_3> ::= <NOUN_3_SUFFIX> |
+<noun_4> ::= <NOUN_4_SUFFIX> |
+<noun_5> ::= <NOUN_5_SUFFIX_REGULAR> |
 
-<noun_1_suffix> ::= "'a'" | "Hom" | "oy" |
-<noun_2_suffix> ::= "pu'" | "Du'" | "mey" |
-<noun_3_suffix> ::= "qoq" | "Hey" | "na'" |
-<noun_4_suffix> ::= "wI'" | "wIj" | "ma'" | "maj" | "lI'" | "lIj" | "Daj" | "chaj" | "vam" | "vetlh" |
+<NOUN_1_SUFFIX> ::= "'a'" | "Hom" | "oy"
+<NOUN_2_SUFFIX> ::= "pu'" | "Du'" | "mey"
+<NOUN_3_SUFFIX> ::= "qoq" | "Hey" | "na'"
+<NOUN_4_SUFFIX> ::= "wI'" | "wIj" | "ma'" | "maj" | "lI'" | "lIj" | "Daj" | "chaj" | "vam" | "vetlh"
 # most of these have their own grammatical rules that should be observed, so this entry isn't used in the BNL.
-<noun_5_suffix> ::= "Daq" | "vo'" | "mo'" | "vaD" | "'e'"
-<noun_5_suffix_regular> ::= "'e'"
+<NOUN_5_SUFFIX> ::= "Daq" | "vo'" | "mo'" | "vaD" | "'e'"
+# -'e' can be applied on any noun suffix in the place of a noun.
+<NOUN_5_SUFFIX_REGULAR> ::= "'e'"
 
 # This bnl expression doesn't consider the unspecified object cases grammatically, but they're the same prefixes, so it's effectively just a linguistic agreement case, which is stated as uncovered elsewhere.
 
