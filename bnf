@@ -1,8 +1,9 @@
 # Is it grammatical to say {qaDev 'ej Qapla'.}? I'm denoting that it is.
-<klingon_sentence> ::= <complex_sentence> | <simple_sentence> | <EXCLAMATION>
+<klingon_sentence> ::= <complex_sentence> | <simple_sentence> | <exclamation_sentence>
 <complex_sentence> ::= <compound_sentence> | <subordinate_clause_sentence> | <sentence_as_object_sentence>
 <compound_sentence> ::= <simple_sentence> " " <CONJUNCTION> " " <klingon_sentence>
 <simple_sentence> ::= <regular_sentence> | <copula_sentence> | <comparison_sentence>
+<exclamation_sentence> ::= <EXCLAMATION>
 
 <optional_adverbs> ::= <adverbs> |
 <adverbs> ::= <adverbs> <adverb_clause> " " | <adverb_clause> " "
