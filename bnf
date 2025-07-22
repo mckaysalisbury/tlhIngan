@@ -39,6 +39,9 @@
 <verb_8> ::= <VERB_8_SUFFIX> | <VERB_8_SUFFIX> <ROVABLE_ROVER> |
 # note that some type_9 verb suffixes can't fit in this position as a regular sentence. They have separate entries.
 <verb_9> ::= <VERB_9_SUFFIX_REGULAR> | <VERB_9_SUFFIX> <ROVABLE_ROVER> |
+
+# TODO: (Klingon) Only allowed with no object? (or is "I help him myself" a valid usage of {-'egh} in this sense?)
+# TODO: (Klingon) {-chuq} Require plural?
 <VERB_1_SUFFIX> ::= "'egh" | "chuq"
 <VERB_2_SUFFIX> ::= "nIS" | "qang" | "vIp" | "beH" | "rup"
 <VERB_3_SUFFIX> ::= "choH" | "qa'"
@@ -57,13 +60,13 @@
 <before_1> ::= <ROVABLE_ROVER> | <BEFORE_1_ROVER> |
 <before_9> ::= <BEFORE_9_ROVER> |
 
-# These are the list of all rovers (but this isn't really being used in the BNL)
-<ROVER> ::= "qu'" | "be'" | "Qo'" | "Ha'"
 # Not all rovers really do rove. These do.
 <ROVABLE_ROVER> ::= "qu'" | "be'"
 # Some have a specific position
 <BEFORE_1_ROVER> ::= "Ha'"
 <BEFORE_9_ROVER> ::= "Qo'"
+# These are the list of all rovers (but this isn't being used in the BNL)
+<ROVER> ::= "qu'" | "be'" | "Qo'" | "Ha'"
 
 # noun suffixes
 <noun_1> ::= <NOUN_1_SUFFIX> |
