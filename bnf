@@ -138,7 +138,9 @@
 
 # Which means these won't be used. (but they don't hurt anything, and they're effectively validated by the `letterparser` branch of the parser repo (rebase involved FWIW)
 # helper definitions for undefined word list
-<klingon_root_word> ::= <klingon_root_word_piece> | <klingon_root_word_piece> <klingon_root_word>
-<klingon_root_word_piece> ::= <consonant> <vowel> | <consonant> <vowel> <consonant> | <consonant> <vowel>"w" "'" | <consonant> <vowel>"y" "'" | <consonant> <vowel>"r" "gh"
-<vowel> ::= "a" | "e" | "I" | "o" | "u"
-<consonant> ::= "b" | "ch" | "D" | "gh" | "H" | "j" | "l" | "m" | "n" | "ng" | "p" | "q" | "Q" | "r" | "S" | "t" | "tlh" | "v" | "w" | "y" | "'"
+<klingon_root_word> ::= <klingon_syllable> | <klingon_syllable> <klingon_root_word>
+<klingon_syllable> ::= <CONSONANT> <VOWEL> | <CONSONANT> <VOWEL> <NON_W_CONSONANT> | <CONSONANT> <W_VOWEL> "w" | <CONSONANT> <W_VOWEL> "w" "'" | <CONSONANT> <VOWEL> "y" "'" | <CONSONANT> <VOWEL>"r" "gh"
+<W_VOWEL> ::= "a" | "e" | "I"
+<VOWEL> ::= "a" | "e" | "I" | "o" | "u"
+<CONSONANT> ::= <NON_W_CONSONANT> | "w"
+<NON_W_CONSONANT> ::= "b" | "ch" | "D" | "gh" | "H" | "j" | "l" | "m" | "n" | "ng" | "p" | "q" | "Q" | "r" | "S" | "t" | "tlh" | "v" | "w" | "y" | "'"
